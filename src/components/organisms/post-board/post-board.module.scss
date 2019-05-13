@@ -1,0 +1,6 @@
+.postBoard{
+    width:100%;
+    @media only screen and (min-width:$TABLET_BREAKPOINT) {
+        width:80%
+    }
+}

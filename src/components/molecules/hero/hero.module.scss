@@ -1,0 +1,24 @@
+.hero {
+  width: 100%;
+  height: 300px;
+  background-color: $grey8;
+  padding: 20px;
+  box-sizing: border-box;
+  @media only screen and (min-width: $TABLET_BREAKPOINT) {
+    padding-left: 20%;
+    h2 {
+      font-size: 4em;
+    }
+    h3 {
+      font-size: 2.5em;
+    }
+  }
+  h2 {
+    color: $grey0;
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 1.5em;
+    color: $grey2;
+  }
+}

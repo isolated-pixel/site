@@ -1,0 +1,10 @@
+.post {
+  width: calc(100%-12px*2);
+  min-height: 200px;
+  box-shadow: 4px 8px $grey3;
+  border: 1px solid $grey2;
+  margin: 12px;
+  background-color: $grey0;
+  padding-left:20px;
+  box-sizing: border-box;
+}
