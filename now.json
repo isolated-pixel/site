@@ -12,8 +12,8 @@
   "scope": "isolated-pixel",
   "build": {
     "env": {
-      "CONTENTFUL_SPACE_ID": "@CONTENTFUL_SPACE_ID",
-      "CONTENTFUL_DELIVERY_TOKEN": "@CONTENTFUL_DELIVERY_TOKEN"
+      "CONTENTFUL_SPACE_ID": "@contentful_space_id",
+      "CONTENTFUL_DELIVERY_TOKEN": "@contentful_delivery_token"
     }
   }
 }
