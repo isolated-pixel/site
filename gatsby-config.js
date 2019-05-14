@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+console.log(process.env)
 module.exports = {
   siteMetadata: {
     title: `Isolated Pixel`,
@@ -18,6 +22,18 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken:
+          process.env.CONTENTFUL_PREVIEW_TOKEN ||
+          process.env.CONTENTFUL_DELIVERY_TOKEN,
+        host: process.env.CONTENTFUL_PREVIEW_TOKEN
+          ? `preview.contentful.com`
+          : undefined,
       },
     },
     `gatsby-transformer-sharp`,
