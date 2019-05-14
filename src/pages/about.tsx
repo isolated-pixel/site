@@ -10,7 +10,7 @@ const IndexPage = () => (
   <Layout >
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <p>
-      Welcome to Isolated Pixel
+      Learn all about Isolated Pixel
     </p>
   </Layout>
 )
