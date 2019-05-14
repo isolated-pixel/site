@@ -1,7 +1,19 @@
 {
-    "version": 2,
-    "name": "isolated-pixel",
-    "builds": [
-        { "src": "package.json", "use": "@now/static-build", "config": {"distDir": "public"} }
-    ]
+  "version": 2,
+  "name": "isolated-pixel",
+  "alias":["isolatedpixel.com","isolatedpixel.now.sh"],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    }
+  ],
+  "scope": "isolated-pixel",
+  "build": {
+    "env": {
+      "CONTENTFUL_SPACE_ID": "@CONTENTFUL_SPACE_ID",
+      "CONTENTFUL_DELIVERY_TOKEN": "@CONTENTFUL_DELIVERY_TOKEN"
+    }
+  }
 }
