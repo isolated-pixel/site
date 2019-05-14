@@ -1,0 +1,75 @@
+.burger,
+.exit > span {
+  cursor: pointer;
+}
+.burger {
+  @media only screen and (min-width: $TABLET_BREAKPOINT) {
+    display: none;
+  }
+}
+
+.exit {
+  padding: 1.5em;
+  @media only screen and (min-width: $TABLET_BREAKPOINT) {
+    display: none;
+  }
+}
+.hidden {
+  left: -100vw;
+}
+.visible {
+  left: 0;
+}
+.nav {
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $grey9;
+  transition: left 0.5s ease;
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    justify-content: flex-start;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      li {
+        margin-left: 0;
+        margin-bottom: 1.5em;
+      }
+    }
+    .social {
+      flex-direction: row;
+      li {
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+        margin-bottom: 0;
+      }
+    }
+  }
+  @media only screen and (min-width: $TABLET_BREAKPOINT) {
+    position: static;
+    width: auto;
+    height: auto;
+    .links {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      ul {
+        flex-direction: row;
+        li {
+          margin-left: 0px;
+          margin-right: 1em;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
