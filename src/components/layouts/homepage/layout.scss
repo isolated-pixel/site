@@ -1,4 +1,15 @@
-body{
-    margin:0;
-    background-color: $grey1;
+body {
+  margin: 0;
+  background-color: $grey1;
+  min-height: 100vh;
+  display: flex;
+  > div {
+      min-height: 100%;
+      flex:1;
+    > div {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+  }
 }

@@ -9,9 +9,7 @@ import { PostBoard } from "../components/organisms/post-board/post-board";
 const IndexPage = () => (
   <Layout >
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <p>
-      Welcome to Isolated Pixel
-    </p>
+    <PostBoard/>
   </Layout>
 )
 

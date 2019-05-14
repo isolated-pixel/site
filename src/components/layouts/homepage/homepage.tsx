@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import styles from "./homepage.module.scss"
 import "./layout.scss"
-import { Header } from "../../molecules/header/header"
+import { Header } from "../../organisms/header/header"
 import { Hero } from "../../molecules/hero/hero"
 import { Footer } from "../../molecules/footer/footer"
 
@@ -36,6 +36,7 @@ const Layout = ({ children }) => (
             maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
+            flex:1
           }}
         >
           <main>{children}</main>
