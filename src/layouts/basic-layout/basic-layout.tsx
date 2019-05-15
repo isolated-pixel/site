@@ -17,9 +17,10 @@ import { Footer } from "../../components/molecules/footer/footer"
 type props = {
   children: React.ReactNode
   className?: string
+  beforeContent?: React.ReactNode
 }
 
-export function BasicLayout({ children, className }: props) {
+export function BasicLayout({ children, className, beforeContent }: props) {
   return (
     <StaticQuery
       query={graphql`
@@ -34,7 +35,7 @@ export function BasicLayout({ children, className }: props) {
       render={data => (
         <>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <Hero />
+          {beforeContent}
           <div className={`${styles.wrapper} ${className}`}>
             <main>{children}</main>
           </div>

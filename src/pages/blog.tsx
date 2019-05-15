@@ -1,14 +1,13 @@
 import React from "react"
-
-import Layout from "../layouts/homepage/homepage"
+import { SlimLayout } from "../layouts/slim-layout/slim-layout"
 import SEO from "../components/seo"
 import { PostBoard } from "../components/organisms/post-board/post-board"
 
 const IndexPage = () => (
-  <Layout>
+  <SlimLayout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <PostBoard />
-  </Layout>
+  </SlimLayout>
 )
 
 export default IndexPage

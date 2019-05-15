@@ -5,9 +5,9 @@ import SEO from "../components/seo"
 import { Hero } from "../components/molecules/hero/hero"
 
 const IndexPage = () => (
-  <SlimLayout beforeContent={<Hero />}>
+  <SlimLayout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <p>Welcome to Isolated Pixel</p>
+    <p style={{ alignSelf: "center" }}>Store is coming soon!</p>
   </SlimLayout>
 )
 
