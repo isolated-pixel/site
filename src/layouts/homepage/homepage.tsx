@@ -12,12 +12,15 @@ import { StaticQuery, graphql } from "gatsby"
 import styles from "./homepage.module.scss"
 import { BasicLayout } from "../basic-layout/basic-layout"
 
-const Layout = ({ children }) => (
-  <BasicLayout className={styles.homepageWrapper}>{children}</BasicLayout>
-)
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+type props = {
+  children: React.ReactNode
+  beforeContent?: React.ReactNode
 }
+
+const Layout = ({ children, beforeContent }: props) => (
+  <BasicLayout beforeContent={beforeContent} className={styles.homepageWrapper}>
+    {children}
+  </BasicLayout>
+)
 
 export default Layout
