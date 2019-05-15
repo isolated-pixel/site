@@ -1,0 +1,39 @@
+.social {
+  display: flex;
+
+  li {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    margin-bottom: 0;
+    > a > span {
+      display: none;
+    }
+    @media only screen and (min-width: $TABLET_BREAKPOINT) {
+      margin-left: 0px;
+      margin-right: 1em;
+      margin-bottom: 0;
+      > a {
+        display: flex;
+        align-items: center;
+        > span {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+.invertedfalse {
+  flex-direction: row;
+}
+.invertedtrue {
+  flex-direction: row;
+}
+@media only screen and (min-width: $TABLET_BREAKPOINT) {
+  .invertedfalse {
+    flex-direction: column;
+  }
+  .invertedtrue {
+    flex-direction: row;
+  }
+}
