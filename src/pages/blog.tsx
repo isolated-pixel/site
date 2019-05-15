@@ -1,5 +1,4 @@
 import React from "react"
-
 import { SlimLayout } from "../layouts/slim-layout/slim-layout"
 import SEO from "../components/seo"
 import { PostBoard } from "../components/organisms/post-board/post-board"
