@@ -50,17 +50,17 @@ export function NavMenu() {
           </ul>
           <ul className={styles.social}>
             <li>
-              <a href="https://www.twitter.com">
+              <a href="https://twitter.com/_isolatedpixel">
                 <IconTwitter />
               </a>
             </li>
             <li>
-              <a href="https://www.twitter.com">
+              <a href="https://www.facebook.com/IsolatedPixelGames/">
                 <IconFacebook />
               </a>
             </li>
             <li>
-              <a href="https://www.twitter.com">
+              <a href="https://github.com/isolated-pixel/">
                 <IconGithub />
               </a>
             </li>

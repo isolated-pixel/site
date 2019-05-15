@@ -4,8 +4,15 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  >*{
+    margin-right: 1em;
+  }
   @media only screen and (min-width:$TABLET_BREAKPOINT) {
+    justify-content: space-between;
     flex-direction: row;
+    >*{
+      margin-right: 0;
+    }
   }
 }

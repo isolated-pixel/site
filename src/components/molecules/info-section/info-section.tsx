@@ -4,9 +4,9 @@ import { RichText } from "../../organisms/rich-text/rich-text"
 
 export function InfoSection({ title, body }) {
   return (
-    <div>
+    <section className={styles.infoSection}>
       <h1>{title}</h1>
       <div>{RichText({ richText: body.json })}</div>
-    </div>
+    </section>
   )
 }

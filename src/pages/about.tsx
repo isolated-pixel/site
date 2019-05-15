@@ -1,18 +1,27 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layouts/homepage/homepage"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import { PostBoard } from "../components/organisms/post-board/post-board"
 import { InfoSection } from "../components/molecules/info-section/info-section"
-import { AboutSection } from "../components/organisms/about-section/about-section"
+import { BasicLayout } from "../layouts/basic-layout/basic-layout";
 
-const IndexPage = () => (
-  <Layout>
+const AboutUsPage = ({ data }) => (
+  <BasicLayout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <AboutSection />
-  </Layout>
+    <InfoSection {...data.contentfulInfoBlock} />
+  </BasicLayout>
 )
 
-export default IndexPage
+export const query = graphql`
+  query getAboutUsPage {
+    contentfulInfoBlock {
+      id
+      title
+      body {
+        json
+      }
+    }
+  }
+`
+
+export default AboutUsPage
