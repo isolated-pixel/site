@@ -1,18 +1,51 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layouts/homepage/homepage"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import { PostBoard } from "../components/organisms/post-board/post-board";
+import { InfoSection } from "../components/molecules/info-section/info-section"
+import { BasicLayout } from "../layouts/basic-layout/basic-layout"
+import { UserCard } from "../components/molecules/user-card/user-card"
 
-const IndexPage = () => (
-  <Layout >
+const AboutUsPage = ({ data }) => (
+  <BasicLayout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <p>
-      Learn all about Isolated Pixel
-    </p>
-  </Layout>
+    <InfoSection {...data.contentfulInfoBlock} />
+    {data.allContentfulPerson.nodes.map((node, i) => (
+      <UserCard {...node} num={i} key={node.id} />
+    ))}
+  </BasicLayout>
 )
 
-export default IndexPage
+export const query = graphql`
+  query getAboutUsPage {
+    contentfulInfoBlock {
+      id
+      title
+      body {
+        json
+      }
+    }
+    allContentfulPerson {
+      nodes {
+        id
+        name
+        title
+        shortBio {
+          shortBio
+        }
+        image {
+          fluid(maxWidth: 150) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+          file {
+            url
+          }
+        }
+        twitter
+        github
+      }
+    }
+  }
+`
+
+export default AboutUsPage

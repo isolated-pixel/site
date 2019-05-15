@@ -1,0 +1,29 @@
+.profileImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.userCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  > * {
+    margin-right: 2em;
+  }
+  @media only screen and (min-width: $TABLET_BREAKPOINT) {
+    align-items: flex-start;
+    padding: 2em;
+  }
+}
+@media only screen and (min-width: $TABLET_BREAKPOINT) {
+  .align0 {
+    flex-direction: row;
+    padding-right: 30%;
+  }
+  .align1 {
+    flex-direction: row-reverse;
+    padding-left: 30%;
+  }
+}

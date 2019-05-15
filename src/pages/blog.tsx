@@ -1,15 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layouts/homepage/homepage"
-import Image from "../components/image"
+import Layout from "../layouts/homepage/homepage"
 import SEO from "../components/seo"
-import { PostBoard } from "../components/organisms/post-board/post-board";
+import { PostBoard } from "../components/organisms/post-board/post-board"
 
 const IndexPage = () => (
-  <Layout >
+  <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <PostBoard/>
+    <PostBoard />
   </Layout>
 )
 
