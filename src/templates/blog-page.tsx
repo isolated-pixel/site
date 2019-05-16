@@ -7,14 +7,17 @@ import { PageNav } from "../components/organisms/page-nav/page-nav"
 
 const BlogPageTemplate = ({ pageContext, data, ...props }) => {
   return (
-    <SlimLayout>
+    <SlimLayout
+      afterContent={
+        <PageNav
+          slug={pageContext.slug}
+          page={pageContext.page}
+          totalPages={pageContext.totalPages}
+        />
+      }
+    >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <PostBoard {...data.allContentfulBlogPost} />
-      <PageNav
-        slug={pageContext.slug}
-        page={pageContext.page}
-        totalPages={pageContext.totalPages}
-      />
     </SlimLayout>
   )
 }

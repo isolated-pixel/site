@@ -18,9 +18,15 @@ type props = {
   children: React.ReactNode
   className?: string
   beforeContent?: React.ReactNode
+  afterContent?: React.ReactNode
 }
 
-export function BasicLayout({ children, className, beforeContent }: props) {
+export function BasicLayout({
+  children,
+  className,
+  beforeContent,
+  afterContent,
+}: props) {
   return (
     <StaticQuery
       query={graphql`
@@ -36,9 +42,8 @@ export function BasicLayout({ children, className, beforeContent }: props) {
         <>
           <Header siteTitle={data.site.siteMetadata.title} />
           {beforeContent}
-          <div className={`${styles.wrapper} ${className}`}>
-            <main>{children}</main>
-          </div>
+          <main className={`${styles.wrapper} ${className}`}>{children}</main>
+          {afterContent}
           <Footer />
         </>
       )}

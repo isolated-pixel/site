@@ -1,10 +1,12 @@
 .pageNav {
   margin-bottom: 0;
+  margin: 1em;
   display: flex;
   width: 100%;
   align-items: center;
   flex-direction: row;
   justify-content: center;
+  align-self: flex-end;
   span,
   a {
     height: 2em;
@@ -15,7 +17,9 @@
     justify-content: center;
     margin-right: 0.5em;
     margin-left: 0.5em;
-    color: $grey5;
-    stroke: $grey5;
+    color: $grey7;
+    svg {
+      stroke: $grey9;
+    }
   }
 }
