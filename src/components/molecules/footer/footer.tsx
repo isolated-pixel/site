@@ -6,7 +6,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div>
         <div>
-          <div>test</div>
+          <div>Isolated Pixel Games</div>
         </div>
         <div>
           <div>test</div>
