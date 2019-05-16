@@ -8,11 +8,13 @@ function Icon({ children, className }) {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#FFFFFF"
+      // stroke="#FFFFFF"
+      // style={{ stroke: "#ffffff" }}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
+      // style={{ stroke: "currentColor" }}
     >
       {children}
     </svg>
@@ -55,6 +57,21 @@ export function IconExit() {
     <Icon className="feather feather-x">
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
+    </Icon>
+  )
+}
+
+export function IconArrowRight() {
+  return (
+    <Icon className="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6" />
+    </Icon>
+  )
+}
+export function IconArrowLeft() {
+  return (
+    <Icon className="feather feather-chevron-left">
+      <polyline points="15 18 9 12 15 6" />
     </Icon>
   )
 }

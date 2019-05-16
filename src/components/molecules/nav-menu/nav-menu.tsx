@@ -1,13 +1,8 @@
 import React, { useState } from "react"
 import styles from "./nav-menu.module.scss"
-import {
-  IconTwitter,
-  IconFacebook,
-  IconGithub,
-  IconMenu,
-  IconExit,
-} from "../../atoms/icons/icons"
+import { IconMenu, IconExit } from "../../atoms/icons/icons"
 import { StyledLink } from "../../atoms/styled-link/styled-link"
+import { SocialLinks } from "../social-links/social-links"
 
 export function NavMenu() {
   const [visible, setVisible] = useState(false)
@@ -48,23 +43,7 @@ export function NavMenu() {
               <StyledLink to="/store">Store</StyledLink>
             </li>
           </ul>
-          <ul className={styles.social}>
-            <li>
-              <a href="https://twitter.com/_isolatedpixel">
-                <IconTwitter />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/IsolatedPixelGames/">
-                <IconFacebook />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/isolated-pixel/">
-                <IconGithub />
-              </a>
-            </li>
-          </ul>
+          <SocialLinks inverted={true} />
         </div>
       </nav>
     </>
