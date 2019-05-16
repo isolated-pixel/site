@@ -14,7 +14,7 @@ function Icon({ children, className }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
-      style={{ stroke: "currentColor" }}
+      // style={{ stroke: "currentColor" }}
     >
       {children}
     </svg>
