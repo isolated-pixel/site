@@ -22,13 +22,13 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    const LIMIT = 1
+    const LIMIT = 3
     const SLUG = `blog`
 
     let totalPages = Math.round(
       result.data.allContentfulBlogPost.totalCount / LIMIT
     )
-    for (let i = 0; i < totalPages; i++) {
+    for (let i = 0; i <= totalPages; i++) {
       createPage({
         path: `${SLUG}${i > 0 ? `/${i}` : ""}`,
         component: blogPostTemplate,

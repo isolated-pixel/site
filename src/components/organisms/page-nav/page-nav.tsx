@@ -16,12 +16,12 @@ export function PageNav({ page, totalPages, slug }) {
           <NavButton page={1} slug={slug} />
         </>
       )}
-      {page - 1 > 0 && <span>...</span>}
+      {page - 1 > 0 && "..."}
       <span>{page + 1}</span>
-      {totalPages - page - 1 > 1 && <span>...</span>}
-      {page != totalPages - 1 && (
+      {totalPages - page - 1 > 1 && "..."}
+      {page != totalPages && (
         <>
-          <NavButton page={totalPages} slug={slug} />
+          <NavButton page={totalPages+1} slug={slug} />
           <ArrowRight page={page} slug={slug} />
         </>
       )}
