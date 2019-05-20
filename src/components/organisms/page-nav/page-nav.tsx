@@ -10,21 +10,21 @@ export function PageNav({ page, totalPages, slug }) {
 
   return (
     <div className={styles.pageNav}>
-      {page != 0 && (
+      {(page != 0 && (
         <>
           <ArrowLeft page={page} slug={slug} />
           <NavButton page={1} slug={slug} />
         </>
-      )}
+      )) || <span className={styles.hidden} />}
       {page - 1 > 0 && "..."}
       <span>{page + 1}</span>
       {totalPages - page - 1 > 1 && "..."}
-      {page != totalPages && (
+      {(page != totalPages && (
         <>
-          <NavButton page={totalPages+1} slug={slug} />
+          <NavButton page={totalPages + 1} slug={slug} />
           <ArrowRight page={page} slug={slug} />
         </>
-      )}
+      )) || <span className={styles.hidden} />}
     </div>
   )
 }

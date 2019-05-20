@@ -8,12 +8,17 @@
 const path = require("path")
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blog-page.tsx`)
+  const blogPageTemplate = path.resolve(`src/templates/blog-page.tsx`)
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`)
   return graphql(
     `
       query getPostBoard {
         allContentfulBlogPost {
           totalCount
+          nodes {
+            slug
+            id
+          }
         }
       }
     `
@@ -31,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
     for (let i = 0; i <= totalPages; i++) {
       createPage({
         path: `${SLUG}${i > 0 ? `/${i}` : ""}`,
-        component: blogPostTemplate,
+        component: blogPageTemplate,
         context: {
           page: i,
           limit: LIMIT,
@@ -41,5 +46,16 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     }
+
+    result.data.allContentfulBlogPost.nodes.forEach(node => {
+      console.log(node)
+      createPage({
+        path: `${node.slug}`,
+        component: blogPostTemplate,
+        context: {
+          ...node,
+        },
+      })
+    })
   })
 }
